@@ -1,0 +1,13 @@
+{
+  // Python 코드 포맷팅 도구로 'Black'을 사용하도록 지정합니다.
+  "python.formatting.provider": "black",
+  // Python 파일에 대한 기본 포맷터로 'ms-python.black-formatter' VS Code 확장을 사용합니다.
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  // Black 포맷터에 인자를 전달하여 코드 한 줄의 최대 길이를 79자로 제한합니다.
+  // PEP 8에서 권장하는 줄 길이(79)
+  "python.formatting.blackArgs": ["--line-length", "79"],
+  // 파일을 저장할 때마다 자동으로 포맷팅을 적용합니다.
+  "editor.formatOnSave": true
+}
