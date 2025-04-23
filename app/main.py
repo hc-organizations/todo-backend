@@ -29,9 +29,7 @@ app = FastAPI(
     title="Todo API", version="1.0.0", debug=settings.DB_ECHO_LOG, lifespan=lifespan
 )
 
-origins = [
-    "http://localhost:3000",
-]
+origins = ["http://localhost:3000", "http://40.82.133.249:3000"]
 
 app.add_middleware(
     CORSMiddleware,

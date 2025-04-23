@@ -1,0 +1,45 @@
+name: Build & Push Backend Image
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v3
+
+      - name: Buildx 설정
+        uses: docker/setup-buildx-action@v2
+
+      - name: GHCR 로그인
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: 이미지 빌드 및 푸시
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ghcr.io/hc-organizations/todo-backend:latest
+            ghcr.io/hc-organizations/todo-backend:${{ github.sha }}
+
+      - name: 배포 레포지토리 알림
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          repository: hc-organizations/todo-deploy
+          event-type: backend-update
+          client-payload: '{"service":"backend"}'
+          token: ${{ secrets.GHCR_PAT }}

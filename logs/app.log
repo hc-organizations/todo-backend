@@ -515,3 +515,84 @@ FROM todo
 2025-04-23 11:32:43.944 | INFO     | app.main:lifespan:25 - Application shutting down...
 2025-04-23 11:32:43.946 | INFO     | logging:callHandlers:1762 - Application shutdown complete.
 2025-04-23 11:32:43.949 | INFO     | logging:callHandlers:1762 - Finished server process [19190]
+2025-04-23 11:49:13.356 | INFO     | app.main:lifespan:17 - Application starting up...
+2025-04-23 11:49:13.511 | INFO     | logging:callHandlers:1762 - select pg_catalog.version()
+2025-04-23 11:49:13.511 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 11:49:13.555 | INFO     | logging:callHandlers:1762 - select current_schema()
+2025-04-23 11:49:13.555 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 11:49:13.599 | INFO     | logging:callHandlers:1762 - show standard_conforming_strings
+2025-04-23 11:49:13.599 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 11:49:13.631 | INFO     | logging:callHandlers:1762 - BEGIN (implicit)
+2025-04-23 11:49:13.633 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-04-23 11:49:13.633 | INFO     | logging:callHandlers:1762 - [generated in 0.00017s] ('todo', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-04-23 11:49:13.666 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = $1::VARCHAR AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != $2::VARCHAR
+2025-04-23 11:49:13.666 | INFO     | logging:callHandlers:1762 - [generated in 0.00017s] ('todostatus', 'pg_catalog')
+2025-04-23 11:49:13.686 | INFO     | logging:callHandlers:1762 - COMMIT
+2025-04-23 11:49:13.706 | INFO     | logging:callHandlers:1762 - Application startup complete.
+2025-04-23 11:49:22.797 | INFO     | logging:callHandlers:1762 - BEGIN (implicit)
+2025-04-23 11:49:22.800 | INFO     | logging:callHandlers:1762 - SELECT todo.id, todo.title, todo.content, todo.status, todo.start_date, todo.end_date, todo.created_at, todo.updated_at 
+FROM todo
+2025-04-23 11:49:22.800 | INFO     | logging:callHandlers:1762 - [generated in 0.00029s] ()
+2025-04-23 11:49:22.913 | INFO     | logging:callHandlers:1762 - COMMIT
+2025-04-23 11:49:23.019 | INFO     | logging:callHandlers:1762 - 127.0.0.1:60673 - "GET /api/v1/todos/ HTTP/1.1" 200
+2025-04-23 11:53:31.810 | INFO     | logging:callHandlers:1762 - BEGIN (implicit)
+2025-04-23 11:53:31.812 | INFO     | logging:callHandlers:1762 - SELECT todo.id, todo.title, todo.content, todo.status, todo.start_date, todo.end_date, todo.created_at, todo.updated_at 
+FROM todo
+2025-04-23 11:53:31.812 | INFO     | logging:callHandlers:1762 - [cached since 248.9s ago] ()
+2025-04-23 11:53:31.927 | INFO     | logging:callHandlers:1762 - COMMIT
+2025-04-23 11:53:31.945 | INFO     | logging:callHandlers:1762 - 127.0.0.1:61781 - "GET /api/v1/todos/ HTTP/1.1" 200
+2025-04-23 13:52:58.744 | INFO     | logging:callHandlers:1762 - Shutting down
+2025-04-23 13:52:58.855 | INFO     | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-04-23 13:52:58.861 | INFO     | app.main:lifespan:25 - Application shutting down...
+2025-04-23 13:52:58.863 | INFO     | logging:callHandlers:1762 - Application shutdown complete.
+2025-04-23 13:52:58.866 | INFO     | logging:callHandlers:1762 - Finished server process [39536]
+2025-04-23 13:53:00.137 | INFO     | app.main:lifespan:17 - Application starting up...
+2025-04-23 13:53:00.255 | INFO     | logging:callHandlers:1762 - select pg_catalog.version()
+2025-04-23 13:53:00.255 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:00.284 | INFO     | logging:callHandlers:1762 - select current_schema()
+2025-04-23 13:53:00.284 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:00.315 | INFO     | logging:callHandlers:1762 - show standard_conforming_strings
+2025-04-23 13:53:00.315 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:00.342 | INFO     | logging:callHandlers:1762 - BEGIN (implicit)
+2025-04-23 13:53:00.346 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-04-23 13:53:00.346 | INFO     | logging:callHandlers:1762 - [generated in 0.00027s] ('todo', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-04-23 13:53:00.371 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = $1::VARCHAR AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != $2::VARCHAR
+2025-04-23 13:53:00.372 | INFO     | logging:callHandlers:1762 - [generated in 0.00048s] ('todostatus', 'pg_catalog')
+2025-04-23 13:53:00.386 | INFO     | logging:callHandlers:1762 - COMMIT
+2025-04-23 13:53:00.403 | INFO     | logging:callHandlers:1762 - Application startup complete.
+2025-04-23 13:53:03.537 | INFO     | logging:callHandlers:1762 - Shutting down
+2025-04-23 13:53:03.640 | INFO     | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-04-23 13:53:03.641 | INFO     | app.main:lifespan:25 - Application shutting down...
+2025-04-23 13:53:03.642 | INFO     | logging:callHandlers:1762 - Application shutdown complete.
+2025-04-23 13:53:03.642 | INFO     | logging:callHandlers:1762 - Finished server process [31806]
+2025-04-23 13:53:04.235 | INFO     | app.main:lifespan:17 - Application starting up...
+2025-04-23 13:53:04.364 | INFO     | logging:callHandlers:1762 - select pg_catalog.version()
+2025-04-23 13:53:04.364 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:04.401 | INFO     | logging:callHandlers:1762 - select current_schema()
+2025-04-23 13:53:04.402 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:04.438 | INFO     | logging:callHandlers:1762 - show standard_conforming_strings
+2025-04-23 13:53:04.438 | INFO     | logging:callHandlers:1762 - [raw sql] ()
+2025-04-23 13:53:04.467 | INFO     | logging:callHandlers:1762 - BEGIN (implicit)
+2025-04-23 13:53:04.470 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-04-23 13:53:04.470 | INFO     | logging:callHandlers:1762 - [generated in 0.00028s] ('todo', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-04-23 13:53:04.501 | INFO     | logging:callHandlers:1762 - SELECT pg_catalog.pg_type.typname 
+FROM pg_catalog.pg_type JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_type.typnamespace 
+WHERE pg_catalog.pg_type.typname = $1::VARCHAR AND pg_catalog.pg_type_is_visible(pg_catalog.pg_type.oid) AND pg_catalog.pg_namespace.nspname != $2::VARCHAR
+2025-04-23 13:53:04.501 | INFO     | logging:callHandlers:1762 - [generated in 0.00025s] ('todostatus', 'pg_catalog')
+2025-04-23 13:53:04.522 | INFO     | logging:callHandlers:1762 - COMMIT
+2025-04-23 13:53:04.542 | INFO     | logging:callHandlers:1762 - Application startup complete.
+2025-04-23 13:53:12.122 | INFO     | logging:callHandlers:1762 - Shutting down
+2025-04-23 13:53:12.223 | INFO     | logging:callHandlers:1762 - Waiting for application shutdown.
+2025-04-23 13:53:12.224 | INFO     | app.main:lifespan:25 - Application shutting down...
+2025-04-23 13:53:12.225 | INFO     | logging:callHandlers:1762 - Application shutdown complete.
+2025-04-23 13:53:12.226 | INFO     | logging:callHandlers:1762 - Finished server process [31868]
