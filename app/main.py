@@ -22,7 +22,7 @@ async def lifespan(app: FastAPI):
     except asyncio.CancelledError:
         logger.warning("Lifespan tasks cancelled")
     finally:
-        logger.info("Application shutting down...")
+        logger.info("Application shutting down....")
 
 
 app = FastAPI(
